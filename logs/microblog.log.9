@@ -1,0 +1,125 @@
+2019-06-22 11:44:54,859 ERROR: Exception on /index [GET] [in /home/saikumar/training/microblog_flask/venv/lib/python3.7/site-packages/flask/app.py:1780]
+Traceback (most recent call last):
+  File "/home/saikumar/training/microblog_flask/venv/lib/python3.7/site-packages/flask/app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/saikumar/training/microblog_flask/venv/lib/python3.7/site-packages/flask/app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/saikumar/training/microblog_flask/venv/lib/python3.7/site-packages/flask/app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/saikumar/training/microblog_flask/venv/lib/python3.7/site-packages/flask/_compat.py", line 36, in reraise
+    raise value
+  File "/home/saikumar/training/microblog_flask/venv/lib/python3.7/site-packages/flask/app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/saikumar/training/microblog_flask/venv/lib/python3.7/site-packages/flask/app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/saikumar/training/microblog_flask/venv/lib/python3.7/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/home/saikumar/training/microblog_flask/app/routes.py", line 32, in index
+    prev_url = url_for('index', page=posts.prev_num) \
+  File "/home/saikumar/training/microblog_flask/venv/lib/python3.7/site-packages/flask/templating.py", line 135, in render_template
+    context, ctx.app)
+  File "/home/saikumar/training/microblog_flask/venv/lib/python3.7/site-packages/flask/templating.py", line 117, in _render
+    rv = template.render(context)
+  File "/home/saikumar/training/microblog_flask/venv/lib/python3.7/site-packages/jinja2/asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "/home/saikumar/training/microblog_flask/venv/lib/python3.7/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/home/saikumar/training/microblog_flask/venv/lib/python3.7/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/saikumar/training/microblog_flask/venv/lib/python3.7/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/home/saikumar/training/microblog_flask/app/templates/index.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "/home/saikumar/training/microblog_flask/app/templates/base.html", line 30, in top-level template code
+    {% endwith %}
+  File "/home/saikumar/training/microblog_flask/app/templates/index.html", line 6, in block "content"
+    {{ form.hidden_tag() }}
+  File "/home/saikumar/training/microblog_flask/venv/lib/python3.7/site-packages/jinja2/environment.py", line 430, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'form' is undefined
+2019-06-22 11:45:03,721 ERROR: Exception on /user/123 [GET] [in /home/saikumar/training/microblog_flask/venv/lib/python3.7/site-packages/flask/app.py:1780]
+Traceback (most recent call last):
+  File "/home/saikumar/training/microblog_flask/venv/lib/python3.7/site-packages/flask/app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/saikumar/training/microblog_flask/venv/lib/python3.7/site-packages/flask/app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/saikumar/training/microblog_flask/venv/lib/python3.7/site-packages/flask/app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/saikumar/training/microblog_flask/venv/lib/python3.7/site-packages/flask/_compat.py", line 36, in reraise
+    raise value
+  File "/home/saikumar/training/microblog_flask/venv/lib/python3.7/site-packages/flask/app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/saikumar/training/microblog_flask/venv/lib/python3.7/site-packages/flask/app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/saikumar/training/microblog_flask/venv/lib/python3.7/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/home/saikumar/training/microblog_flask/app/routes.py", line 78, in user
+    page = request.args.get('page', 1, type=int)
+  File "/home/saikumar/training/microblog_flask/venv/lib/python3.7/site-packages/flask/templating.py", line 135, in render_template
+    context, ctx.app)
+  File "/home/saikumar/training/microblog_flask/venv/lib/python3.7/site-packages/flask/templating.py", line 117, in _render
+    rv = template.render(context)
+  File "/home/saikumar/training/microblog_flask/venv/lib/python3.7/site-packages/jinja2/asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "/home/saikumar/training/microblog_flask/venv/lib/python3.7/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/home/saikumar/training/microblog_flask/venv/lib/python3.7/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/saikumar/training/microblog_flask/venv/lib/python3.7/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/home/saikumar/training/microblog_flask/app/templates/user.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "/home/saikumar/training/microblog_flask/app/templates/base.html", line 30, in top-level template code
+    {% endwith %}
+  File "/home/saikumar/training/microblog_flask/app/templates/user.html", line 26, in block "content"
+    <a href="{{ url_for('edit-profile') }}">Edit profile</a>
+  File "/home/saikumar/training/microblog_flask/venv/lib/python3.7/site-packages/flask/helpers.py", line 356, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "/home/saikumar/training/microblog_flask/venv/lib/python3.7/site-packages/flask/app.py", line 2080, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "/home/saikumar/training/microblog_flask/venv/lib/python3.7/site-packages/flask/_compat.py", line 36, in reraise
+    raise value
+  File "/home/saikumar/training/microblog_flask/venv/lib/python3.7/site-packages/flask/helpers.py", line 345, in url_for
+    force_external=external)
+  File "/home/saikumar/training/microblog_flask/venv/lib/python3.7/site-packages/werkzeug/routing.py", line 2007, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'edit-profile'. Did you mean 'edit_profile' instead?
+2019-06-22 11:45:06,051 ERROR: Exception on /index [GET] [in /home/saikumar/training/microblog_flask/venv/lib/python3.7/site-packages/flask/app.py:1780]
+Traceback (most recent call last):
+  File "/home/saikumar/training/microblog_flask/venv/lib/python3.7/site-packages/flask/app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/saikumar/training/microblog_flask/venv/lib/python3.7/site-packages/flask/app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/saikumar/training/microblog_flask/venv/lib/python3.7/site-packages/flask/app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/saikumar/training/microblog_flask/venv/lib/python3.7/site-packages/flask/_compat.py", line 36, in reraise
+    raise value
+  File "/home/saikumar/training/microblog_flask/venv/lib/python3.7/site-packages/flask/app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/saikumar/training/microblog_flask/venv/lib/python3.7/site-packages/flask/app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/saikumar/training/microblog_flask/venv/lib/python3.7/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/home/saikumar/training/microblog_flask/app/routes.py", line 32, in index
+    prev_url = url_for('index', page=posts.prev_num) \
+  File "/home/saikumar/training/microblog_flask/venv/lib/python3.7/site-packages/flask/templating.py", line 135, in render_template
+    context, ctx.app)
+  File "/home/saikumar/training/microblog_flask/venv/lib/python3.7/site-packages/flask/templating.py", line 117, in _render
+    rv = template.render(context)
+  File "/home/saikumar/training/microblog_flask/venv/lib/python3.7/site-packages/jinja2/asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "/home/saikumar/training/microblog_flask/venv/lib/python3.7/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/home/saikumar/training/microblog_flask/venv/lib/python3.7/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/saikumar/training/microblog_flask/venv/lib/python3.7/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/home/saikumar/training/microblog_flask/app/templates/index.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "/home/saikumar/training/microblog_flask/app/templates/base.html", line 30, in top-level template code
+    {% endwith %}
+  File "/home/saikumar/training/microblog_flask/app/templates/index.html", line 6, in block "content"
+    {{ form.hidden_tag() }}
+  File "/home/saikumar/training/microblog_flask/venv/lib/python3.7/site-packages/jinja2/environment.py", line 430, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'form' is undefined

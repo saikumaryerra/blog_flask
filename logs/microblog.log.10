@@ -1,0 +1,132 @@
+2019-06-22 11:04:36,745 ERROR: Exception on /login [POST] [in /home/saikumar/training/microblog_flask/venv/lib/python3.7/site-packages/flask/app.py:1780]
+Traceback (most recent call last):
+  File "/home/saikumar/training/microblog_flask/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1244, in _execute_context
+    cursor, statement, parameters, context
+  File "/home/saikumar/training/microblog_flask/venv/lib/python3.7/site-packages/sqlalchemy/engine/default.py", line 550, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.UndefinedTable: relation "user" does not exist
+LINE 2: FROM "user" 
+             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/saikumar/training/microblog_flask/venv/lib/python3.7/site-packages/flask/app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/saikumar/training/microblog_flask/venv/lib/python3.7/site-packages/flask/app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/saikumar/training/microblog_flask/venv/lib/python3.7/site-packages/flask/app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/saikumar/training/microblog_flask/venv/lib/python3.7/site-packages/flask/_compat.py", line 36, in reraise
+    raise value
+  File "/home/saikumar/training/microblog_flask/venv/lib/python3.7/site-packages/flask/app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/saikumar/training/microblog_flask/venv/lib/python3.7/site-packages/flask/app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/saikumar/training/microblog_flask/app/routes.py", line 40, in login
+    user = User.query.filter_by(username=form.username.data).first()
+  File "/home/saikumar/training/microblog_flask/venv/lib/python3.7/site-packages/sqlalchemy/orm/query.py", line 3222, in first
+    ret = list(self[0:1])
+  File "/home/saikumar/training/microblog_flask/venv/lib/python3.7/site-packages/sqlalchemy/orm/query.py", line 3012, in __getitem__
+    return list(res)
+  File "/home/saikumar/training/microblog_flask/venv/lib/python3.7/site-packages/sqlalchemy/orm/query.py", line 3324, in __iter__
+    return self._execute_and_instances(context)
+  File "/home/saikumar/training/microblog_flask/venv/lib/python3.7/site-packages/sqlalchemy/orm/query.py", line 3349, in _execute_and_instances
+    result = conn.execute(querycontext.statement, self._params)
+  File "/home/saikumar/training/microblog_flask/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 988, in execute
+    return meth(self, multiparams, params)
+  File "/home/saikumar/training/microblog_flask/venv/lib/python3.7/site-packages/sqlalchemy/sql/elements.py", line 287, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "/home/saikumar/training/microblog_flask/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1107, in _execute_clauseelement
+    distilled_params,
+  File "/home/saikumar/training/microblog_flask/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1248, in _execute_context
+    e, statement, parameters, cursor, context
+  File "/home/saikumar/training/microblog_flask/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1466, in _handle_dbapi_exception
+    util.raise_from_cause(sqlalchemy_exception, exc_info)
+  File "/home/saikumar/training/microblog_flask/venv/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 399, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "/home/saikumar/training/microblog_flask/venv/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 153, in reraise
+    raise value.with_traceback(tb)
+  File "/home/saikumar/training/microblog_flask/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1244, in _execute_context
+    cursor, statement, parameters, context
+  File "/home/saikumar/training/microblog_flask/venv/lib/python3.7/site-packages/sqlalchemy/engine/default.py", line 550, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.ProgrammingError: (psycopg2.errors.UndefinedTable) relation "user" does not exist
+LINE 2: FROM "user" 
+             ^
+
+[SQL: SELECT "user".id AS user_id, "user".username AS user_username, "user".email AS user_email, "user".password_hash AS user_password_hash, "user".about_me AS user_about_me, "user".last_seen AS user_last_seen 
+FROM "user" 
+WHERE "user".username = %(username_1)s 
+ LIMIT %(param_1)s]
+[parameters: {'username_1': 'sai', 'param_1': 1}]
+(Background on this error at: http://sqlalche.me/e/f405)
+2019-06-22 11:05:17,460 ERROR: Exception on /login [POST] [in /home/saikumar/training/microblog_flask/venv/lib/python3.7/site-packages/flask/app.py:1780]
+Traceback (most recent call last):
+  File "/home/saikumar/training/microblog_flask/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1244, in _execute_context
+    cursor, statement, parameters, context
+  File "/home/saikumar/training/microblog_flask/venv/lib/python3.7/site-packages/sqlalchemy/engine/default.py", line 550, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.UndefinedTable: relation "user" does not exist
+LINE 2: FROM "user" 
+             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/saikumar/training/microblog_flask/venv/lib/python3.7/site-packages/flask/app.py", line 2311, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/saikumar/training/microblog_flask/venv/lib/python3.7/site-packages/flask/app.py", line 1834, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/saikumar/training/microblog_flask/venv/lib/python3.7/site-packages/flask/app.py", line 1737, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/saikumar/training/microblog_flask/venv/lib/python3.7/site-packages/flask/_compat.py", line 36, in reraise
+    raise value
+  File "/home/saikumar/training/microblog_flask/venv/lib/python3.7/site-packages/flask/app.py", line 1832, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/saikumar/training/microblog_flask/venv/lib/python3.7/site-packages/flask/app.py", line 1818, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/saikumar/training/microblog_flask/app/routes.py", line 40, in login
+    user = User.query.filter_by(username=form.username.data).first()
+  File "/home/saikumar/training/microblog_flask/venv/lib/python3.7/site-packages/sqlalchemy/orm/query.py", line 3222, in first
+    ret = list(self[0:1])
+  File "/home/saikumar/training/microblog_flask/venv/lib/python3.7/site-packages/sqlalchemy/orm/query.py", line 3012, in __getitem__
+    return list(res)
+  File "/home/saikumar/training/microblog_flask/venv/lib/python3.7/site-packages/sqlalchemy/orm/query.py", line 3324, in __iter__
+    return self._execute_and_instances(context)
+  File "/home/saikumar/training/microblog_flask/venv/lib/python3.7/site-packages/sqlalchemy/orm/query.py", line 3349, in _execute_and_instances
+    result = conn.execute(querycontext.statement, self._params)
+  File "/home/saikumar/training/microblog_flask/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 988, in execute
+    return meth(self, multiparams, params)
+  File "/home/saikumar/training/microblog_flask/venv/lib/python3.7/site-packages/sqlalchemy/sql/elements.py", line 287, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "/home/saikumar/training/microblog_flask/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1107, in _execute_clauseelement
+    distilled_params,
+  File "/home/saikumar/training/microblog_flask/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1248, in _execute_context
+    e, statement, parameters, cursor, context
+  File "/home/saikumar/training/microblog_flask/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1466, in _handle_dbapi_exception
+    util.raise_from_cause(sqlalchemy_exception, exc_info)
+  File "/home/saikumar/training/microblog_flask/venv/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 399, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "/home/saikumar/training/microblog_flask/venv/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 153, in reraise
+    raise value.with_traceback(tb)
+  File "/home/saikumar/training/microblog_flask/venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1244, in _execute_context
+    cursor, statement, parameters, context
+  File "/home/saikumar/training/microblog_flask/venv/lib/python3.7/site-packages/sqlalchemy/engine/default.py", line 550, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.ProgrammingError: (psycopg2.errors.UndefinedTable) relation "user" does not exist
+LINE 2: FROM "user" 
+             ^
+
+[SQL: SELECT "user".id AS user_id, "user".username AS user_username, "user".email AS user_email, "user".password_hash AS user_password_hash, "user".about_me AS user_about_me, "user".last_seen AS user_last_seen 
+FROM "user" 
+WHERE "user".username = %(username_1)s 
+ LIMIT %(param_1)s]
+[parameters: {'username_1': '123', 'param_1': 1}]
+(Background on this error at: http://sqlalche.me/e/f405)
+2019-06-22 11:07:22,812 INFO: Microblog startup [in /home/saikumar/training/microblog_flask/app/__init__.py:44]
+2019-06-22 11:09:55,466 INFO: Microblog startup [in /home/saikumar/training/microblog_flask/app/__init__.py:44]
+2019-06-22 11:10:06,413 INFO: Microblog startup [in /home/saikumar/training/microblog_flask/app/__init__.py:44]
+2019-06-22 11:10:10,577 INFO: Microblog startup [in /home/saikumar/training/microblog_flask/app/__init__.py:44]
