@@ -1,14 +1,20 @@
-<a href="{{ url_for('post_details',post_id=post.id) }}">
+<a href="{{ url_for('main.post_details',post_id=post.id) }}">
 <table>
     <tr valign="top">
         <td>
           <img src="{{ post.author.avatar(36) }}">
         </td>
         <td>
-            <a href="{{ url_for('user', username=post.author.username) }}">
+            <a href="{{ url_for('main.user', username=post.author.username) }}">
                 {{ post.author.username }}
             </a>
             says:<br>{{ post.body }}
+        </td>
+        <td>
+            {% if post.timestamp %}
+            <p>Posted on: {{ moment(post.timestamp).format('LLL') }}</p>
+            {% endif %}
+
         </td>
     </tr>
 </table>

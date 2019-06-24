@@ -23,12 +23,20 @@
                    <img src="{{ comment.comment_author.avatar(36) }}">
                 </td>
                 <td>
-                    <a href="{{ url_for('user', username=comment.comment_author.username) }}">
+                    <a href="{{ url_for('main.user', username=comment.comment_author.username) }}">
                         {{ comment.comment_author.username }}
                     </a>
-                    says:<br>{{ comment.body }}
+                    says: {{ comment.body }}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    {% if comment.timestamp %}
+                    <p>commented on: {{ moment(comment.timestamp).format('LLL') }}</p>
+                    {% endif %}
+        
                 </td>
             </tr>
     </table>
 {% endfor %}
-{% endblock %}
+{% endblock %}ss
